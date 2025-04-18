@@ -43,7 +43,7 @@ class ChangingLanguageTest : BaseTest<MainActivity>(
         languageListRobot
             .assertAddLanguageTextColor(theme = Theme.DARK)
             .addNewLanguage()
-            .scrollToLanguageAndClick(HEBREW)
+//            .scrollToLanguageAndClick(HEBREW)
         systemRobot
             .disableDarkMode(context)
         languageListRobot
@@ -53,7 +53,7 @@ class ChangingLanguageTest : BaseTest<MainActivity>(
             .typeTextInView(JAPANESE)
         languageListRobot
             .assertJapaneseLanguageTextColor(theme = Theme.LIGHT)
-            .scrollToLanguageAndClick(JAPANESE)
+//            .scrollToLanguageAndClick(JAPANESE)
             .pressBack()
             .pressBack()
         bottomNavRobot

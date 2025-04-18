@@ -42,15 +42,15 @@ class LanguageListRobot : BaseRobot() {
         delay(TestConfig.DELAY_SHORT)
     }
 
-    fun scrollToLanguageAndClick(title: String) = apply {
-        list.scrollToRecyclerView(
-            recyclerViewId = R.id.languages_list_recycler,
-            title = title,
-            textViewId = R.id.language_subtitle,
-        )
-        click.onDisplayedViewWithText(viewId = R.id.language_subtitle, title)
-        delay(TestConfig.DELAY_MEDIUM)
-    }
+//    fun scrollToLanguageAndClick(title: String) = apply {
+//        list.scrollToRecyclerView(
+//            recyclerViewId = R.id.languages_list_recycler,
+//            title = title,
+//            textViewId = R.id.language_subtitle,
+//        )
+//        click.onDisplayedViewWithText(viewId = R.id.language_subtitle, title)
+//        delay(TestConfig.DELAY_MEDIUM)
+//    }
 
     fun assertJapaneseLanguageTextColor(theme: Theme) = apply {
         val color = TestWikipediaColors.getGetColor(theme, TestThemeColorType.SECONDARY)

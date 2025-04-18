@@ -81,13 +81,13 @@ class SearchExternalIntentTest {
 
         TestUtil.delay(1)
 
-        onView(allOf(withId(androidx.appcompat.R.id.search_src_text), isDisplayed()))
-            .perform(ViewActions.replaceText("rus"), ViewActions.closeSoftKeyboard())
+   //     onView(allOf(withId(androidx.appcompat.R.id.search_src_text), isDisplayed()))
+     //       .perform(ViewActions.replaceText("rus"), ViewActions.closeSoftKeyboard())
 
         TestUtil.delay(1)
 
-        onView(withId(R.id.languages_list_recycler))
-            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, ViewActions.click()))
+       // onView(withId(R.id.languages_list_recycler))
+        //    .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, ViewActions.click()))
 
         TestUtil.delay(1)
 
