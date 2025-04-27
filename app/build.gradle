@@ -260,6 +260,7 @@ dependencies {
     testImplementation libs.room.testing
 
     androidTestImplementation libs.espresso.contrib
+    androidTestImplementation libs.androidx.espresso.intents
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.room.testing
     androidTestUtil libs.androidx.orchestrator
@@ -280,6 +281,7 @@ dependencies {
     debugImplementation(libs.compose.debug.test)
     debugImplementation(composeBom)
     androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.4'
+    implementation "org.jetbrains.kotlin:kotlin-test:2.1.20"
 }
 
 private setSigningConfigKey(config, Properties props) {
