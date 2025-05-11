@@ -48,6 +48,7 @@ class Schedule {
     private fun setScheduleInDay(day: Days, function: ()-> Unit) {
         this.day = day
         function()
+        this.day = null
     }
 
     operator fun String.rangeTo(endAt: String): Pair<LocalTime, LocalTime> {
