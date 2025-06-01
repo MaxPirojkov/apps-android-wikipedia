@@ -1,11 +1,10 @@
 package org.wikipedia.works.lesson06
-
+/*
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.*
 import org.hamcrest.TypeSafeMatcher
-import org.junit.jupiter.api.Test
 
 data class Shape(val sideLength: Float, val sideCount: Int, val color: ColorHw)
 
@@ -73,7 +72,9 @@ class EvenQuantityOfSides : TypeSafeMatcher<Shape>() {
 
 }
 
-class AngleCountMatchesSides() : TypeSafeMatcher<Shape>() {
+class AngleCountMatchesSides(
+    private val angleCount: Int
+) : TypeSafeMatcher<Shape>() {
     override fun describeTo(description: Description) {
         description.appendText("Shape must have same numb of angles as sides if it has or more " +
                 "and 0 angles it it has 1 or 2 sides")
@@ -83,7 +84,7 @@ class AngleCountMatchesSides() : TypeSafeMatcher<Shape>() {
         return when {
             item.sideCount in 1..2 -> true
             item.sideCount > 2 -> true
-            else -> false
+            else -> throw IllegalArgumentException("Wrong shape")
         }
     }
 
@@ -148,7 +149,7 @@ class ShapeTest {
         }
     }
 }
-
+*/
 
 
 

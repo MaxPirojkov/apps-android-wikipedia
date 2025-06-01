@@ -4,7 +4,19 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
+import com.kaspersky.kaspresso.screens.KScreen
+import io.github.kakaocup.kakao.text.KButton
+import org.wikipedia.R
 import org.wikipedia.views.AppTextView
+
+object OnboardingScreen : KScreen<OnboardingScreen>() {
+    override val layoutId: Int? = null
+    override val viewClass: Class<*>? = null
+
+    val skipButton = KButton {
+        withId(R.id.fragment_onboarding_skip_button)
+    }
+}
 
 val onboardingImage = listOf(
     AppCompatImageView::class.java,
@@ -35,11 +47,6 @@ val addLanguageButton = listOf(
     "onboarding_multilingual_add_language_text"
 )
 
-val skipButton = listOf(
-    MaterialButton::class.java,
-    "fragment_onboarding_skip_button",
-    "onboarding_skip"
-)
 
 val tabLayout = listOf(
     TabLayout::class.java,
