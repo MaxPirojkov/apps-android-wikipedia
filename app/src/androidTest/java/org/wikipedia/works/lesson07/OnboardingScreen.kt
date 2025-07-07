@@ -1,7 +1,6 @@
 package org.wikipedia.works.lesson07
 
 import android.view.View
-import androidx.viewpager2.widget.ViewPager2
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.pager2.KViewPager2
@@ -10,6 +9,7 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
+import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.hamcrest.Matcher
 import org.wikipedia.R
 
@@ -26,6 +26,10 @@ object OnboardingScreen: KScreen<OnboardingScreen>() {
             itemType(::OnboardingPagerSecondItem)
         }
     )
+
+    val skipButton = KButton {
+        withId(R.id.fragment_onboarding_skip_button)
+    }
     fun OnboardingScreen.firstPage(block: OnboardingPagerFirstItem.() -> Unit) {
         slider.childAt(0, block)
     }
@@ -33,6 +37,8 @@ object OnboardingScreen: KScreen<OnboardingScreen>() {
     fun OnboardingScreen.secondPage(block: OnboardingPagerSecondItem.() -> Unit) {
         slider.childAt(1, block)
     }
+
+
 }
 
 class OnboardingPagerFirstItem(
@@ -52,8 +58,9 @@ class OnboardingPagerFirstItem(
     }
 
     val languages = KRecyclerView(
+        parent = matcher,     // parent потому что вложенный ресайклер
         builder = {
-            withId(R.id.languageList)
+            withId(R.id.languagesList)
         },
         itemTypeBuilder = {
             itemType(::LanguageItem)
@@ -81,8 +88,4 @@ class OnboardingPagerSecondItem(
     }
 }
 
-class LanguageItem(matcher: Matcher<View>): KRecyclerItem<LanguageItem>(matcher) {
-    val textView = KTextView(matcher) {
-        withId(R.id.option_label)
-    }
-}
+class LanguageItem(matcher: Matcher<View>): KRecyclerItem<LanguageItem>(matcher), TextViewAssertions

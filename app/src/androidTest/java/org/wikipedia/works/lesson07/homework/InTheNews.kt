@@ -5,8 +5,10 @@ import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
+import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.works.lesson07.LanguageItem
 
 class InTheNews(matcher: Matcher<View>) : KRecyclerItem<InTheNews>(matcher) {
     val headerText = KTextView(matcher) {
@@ -27,3 +29,5 @@ class InTheNews(matcher: Matcher<View>) : KRecyclerItem<InTheNews>(matcher) {
         }
     )
 }
+
+class newsRecycler(matcher: Matcher<View>): KRecyclerItem<newsRecycler>(matcher), TextViewAssertions

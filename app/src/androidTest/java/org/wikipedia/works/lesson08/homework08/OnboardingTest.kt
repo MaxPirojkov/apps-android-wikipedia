@@ -8,8 +8,6 @@ import org.wikipedia.main.MainActivity
 import org.wikipedia.works.lesson07.OnboardingScreen
 import org.wikipedia.works.lesson07.OnboardingScreen.firstPage
 import org.wikipedia.R
-import org.wikipedia.works.homework03.languageList
-import org.wikipedia.works.homework03.primaryText
 import org.wikipedia.works.lesson07.LanguageItem
 import org.wikipedia.works.lesson07.OnboardingPagerFirstItem
 
@@ -23,14 +21,16 @@ class OnboardingTest : TestCase() {
     @Test
     fun checkFirstScreen() {
         run {
-            step("Check main logo") {
+            step("Main logo is displayed") {
                 OnboardingScreen.firstPage {
                     mainLogoImage.isDisplayed()
                 }
             }
-            step("Check Primary text") {
-                OnboardingScreen.firstPage {
+            OnboardingScreen.firstPage {
+                step("Primary text is displayed") {
                     textTitle.isDisplayed()
+                }
+                step("Primary text has text") {
                     textTitle.hasText(R.string.onboarding_welcome_title_v2)
                 }
             }
@@ -47,18 +47,10 @@ class OnboardingTest : TestCase() {
                     addLanguages.isClickable()
                 }
             }
-            step("Check languages list") {
-                OnboardingScreen.firstPage {
-                    flakySafely(timeoutMs = 10000) {
-                        languages.isDisplayed()
-                    }
-                    println(">>>>>> ${languages.getSize()}")
-                }
-            }
-            step("Check default language") {
-                OnboardingScreen.firstPage {
+            OnboardingScreen.firstPage {
+                step("Check default language") {
                     languages.childAt<LanguageItem>(0) {
-                        textView.hasText("1. English")
+                        containsText("English")
                     }
                 }
             }

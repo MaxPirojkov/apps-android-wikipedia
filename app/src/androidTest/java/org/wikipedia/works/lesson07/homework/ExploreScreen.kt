@@ -24,6 +24,7 @@ object ExploreScreen: KScreen<ExploreScreen>() {
             itemType(::DayHeaderCardView)
             itemType(::TopReadCardView)
             itemType(::InTheNews)
+            itemType(::FeaturedArticleItem)
         }
     )
 
