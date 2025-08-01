@@ -1,9 +1,10 @@
 package org.wikipedia.works.lesson10
 
 import com.kaspersky.components.kautomator.component.common.views.UiView
+import com.kaspersky.components.kautomator.component.text.UiTextView
 import com.kaspersky.components.kautomator.screen.UiScreen
 
-object AddLanguageUiScreen: UiScreen<AddLanguageUiScreen>() {
+object AddLanguageUiScreen : UiScreen<AddLanguageUiScreen>() {
     override val packageName = "org.wikipedia.alpha"
 
     val addLanguage = UiView {
@@ -12,5 +13,9 @@ object AddLanguageUiScreen: UiScreen<AddLanguageUiScreen>() {
 
     val itemFromLangList = UiView {
         containsText("Русский")
+    }
+
+    val backButton = UiView {
+        withContentDescription("Navigate up")
     }
 }

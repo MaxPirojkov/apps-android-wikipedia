@@ -23,6 +23,13 @@ object OnboardingUiScreen: UiScreen<OnboardingUiScreen>() {
         withId(this@OnboardingUiScreen.packageName,"languagesList")
     }
 
+    val itemLangList = UiTextView {
+        withIndex(1) {
+            withId(this@OnboardingUiScreen.packageName, "option_label")
+        }
+    }
+
+
     val addLangButton = UiView {
         withId(this@OnboardingUiScreen.packageName, "addLanguageButton")
     }
