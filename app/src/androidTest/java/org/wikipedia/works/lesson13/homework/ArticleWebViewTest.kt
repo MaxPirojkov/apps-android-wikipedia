@@ -42,15 +42,19 @@ class ArticleWebViewTest : TestCase() {
                     ) {
                         click()
                     }
-                    ReferenceNumberViewScreen.index.containsText("5.")
-                    device.uiDevice.pressBack()
+                }
+                ReferenceNumberViewScreen.index.containsText("5.")
+                device.uiDevice.pressBack()
+                webView {
                     withElement(
                         Locator.XPATH,
                         "(//a[contains(@class,'mw-redirect')])[2]"
                     ) {
                         click()
-                        ReferenceNumberViewScreen.readArticle.click()
                     }
+                }
+                ReferenceNumberViewScreen.readArticle.click()
+                webView {
                     withElement(Locator.ID, "References") {
                         scroll()
                     }
@@ -60,4 +64,3 @@ class ArticleWebViewTest : TestCase() {
         }
     }
 }
-//*[@id="pcs"]/section[3]/section[3]/p[4]/a[3]

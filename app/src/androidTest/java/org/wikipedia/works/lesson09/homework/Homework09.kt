@@ -1,6 +1,7 @@
 package org.wikipedia.works.lesson09.homework
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
