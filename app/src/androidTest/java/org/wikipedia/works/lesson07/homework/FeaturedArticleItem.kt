@@ -1,8 +1,11 @@
 package org.wikipedia.works.lesson07.homework
 
 import android.view.View
+import androidx.test.espresso.action.CoordinatesProvider
+import com.kaspersky.components.kautomator.component.common.views.UiView
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
+import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
@@ -14,7 +17,7 @@ class FeaturedArticleItem(matcher: Matcher<View>) : KRecyclerItem<FeaturedArticl
         withId(R.id.view_card_header_title)
     }
 
-    val articleImage = KImageView {
+    val articleImage: KButton = KButton {
         withId(R.id.articleImage)
     }
 

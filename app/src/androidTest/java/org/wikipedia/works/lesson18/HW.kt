@@ -10,8 +10,9 @@ import org.wikipedia.main.MainActivity
 import org.wikipedia.works.lesson07.OnboardingScreen
 import org.wikipedia.works.lesson07.homework.ExploreScreen
 import org.wikipedia.works.lesson07.homework.SearchCardViewItem
+import org.wikipedia.works.lesson19.Steps
 
-class HW: TestCase(kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport()) {
+class HW : TestCase(kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport()) {
     @get:Rule
     val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
@@ -20,9 +21,14 @@ class HW: TestCase(kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport(
         before {
         }.after {
         }.run {
-            step("Skip onboarding") {
-                OnboardingScreen.skipButton.click()
+            val steps = Steps(this)
+            steps {
+                click(OnboardingScreen.skipButton)
+
+                isDisplayed(ExploreScreen.logo, "logo")
             }
+
+
             step("Check landscape orientation") {
                 device.uiDevice.setOrientationLeft()
                 device.uiDevice.isNaturalOrientation
@@ -34,9 +40,6 @@ class HW: TestCase(kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport(
             }
             step("Switch on display") {
                 device.uiDevice.wakeUp()
-            }
-            step("Check logo") {
-                ExploreScreen.logo.isDisplayed()
             }
             step("Check hint in search input") {
                 ExploreScreen.feedRecycler.childAt<SearchCardViewItem>(0) {

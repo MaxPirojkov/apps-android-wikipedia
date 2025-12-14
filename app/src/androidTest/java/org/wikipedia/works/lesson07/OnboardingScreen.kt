@@ -12,10 +12,14 @@ import io.github.kakaocup.kakao.text.KTextView
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.works.lesson20.NamedKScreen
+import org.wikipedia.works.lesson20.name
 
-object OnboardingScreen: KScreen<OnboardingScreen>() {
+object OnboardingScreen: NamedKScreen<OnboardingScreen>() {
     override val layoutId = R.layout.fragment_onboarding_pager
     override val viewClass = null
+    override val screenName: String = "Onboarding screen"
+
 
     val slider = KViewPager2(
         builder = {
@@ -25,11 +29,11 @@ object OnboardingScreen: KScreen<OnboardingScreen>() {
             itemType( ::OnboardingPagerFirstItem)
             itemType(::OnboardingPagerSecondItem)
         }
-    )
+    ).name(withParent("List of blocks"))
 
     val skipButton = KButton {
         withId(R.id.fragment_onboarding_skip_button)
-    }
+    }.name(withParent("skip Button"))
     fun OnboardingScreen.firstPage(block: OnboardingPagerFirstItem.() -> Unit) {
         slider.childAt(0, block)
     }
@@ -37,6 +41,7 @@ object OnboardingScreen: KScreen<OnboardingScreen>() {
     fun OnboardingScreen.secondPage(block: OnboardingPagerSecondItem.() -> Unit) {
         slider.childAt(1, block)
     }
+
 
 
 }
