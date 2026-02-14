@@ -258,6 +258,8 @@ dependencies {
     testImplementation libs.mockwebserver
     testImplementation libs.hamcrest
     testImplementation libs.room.testing
+    androidTestImplementation "com.kaspersky.android-components:kaspresso-allure-support:1.6.0"
+
 
     androidTestImplementation libs.espresso.contrib
     androidTestImplementation libs.androidx.espresso.intents
@@ -280,7 +282,7 @@ dependencies {
     androidTestImplementation(composeBom)
     debugImplementation(libs.compose.debug.test)
     debugImplementation(composeBom)
-    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.4'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.6.0'
     implementation "org.jetbrains.kotlin:kotlin-test:2.1.20"
 }
 

@@ -7,6 +7,10 @@ import org.wikipedia.works.lesson20.getName
 
 class NamedSteps(val testContext: TestContext<*>) {
 
+    operator fun invoke(function: NamedSteps.() -> Unit) {
+        function()
+    }
+
     fun click(item: BaseActions) {
         testContext.step("click on ${item.getName()}") {
             item.click()
@@ -19,6 +23,3 @@ class NamedSteps(val testContext: TestContext<*>) {
         }
     }
 }
-
-val <T> TestContext<T>.namedSteps: NamedSteps
-    get() = NamedSteps(this)

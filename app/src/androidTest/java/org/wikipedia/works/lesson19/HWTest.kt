@@ -19,7 +19,6 @@ class HWTest : TestCase() {
     @Test
     fun deviceTest() {
         run {
-            val steps = Steps(this)
             steps {
                 click(OnboardingScreen.skipButton)
                 setOrientationLeft()
