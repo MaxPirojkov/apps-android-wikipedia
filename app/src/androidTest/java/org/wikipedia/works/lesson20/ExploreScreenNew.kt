@@ -10,6 +10,7 @@ import org.wikipedia.works.lesson07.homework.InTheNews
 import org.wikipedia.works.lesson07.homework.SearchCardViewItem
 import org.wikipedia.works.lesson07.homework.TopReadCardItem
 import org.wikipedia.works.lesson07.homework.TopReadCardView
+import org.wikipedia.works.lesson22.invokeById
 
 object ExploreScreenNew : NamedKScreen<ExploreScreenNew>() {
     override val layoutId: Int? = null
@@ -17,35 +18,45 @@ object ExploreScreenNew : NamedKScreen<ExploreScreenNew>() {
     override val screenName = "Main screen"
 
     val toolbarTitle = KImageView {
-        withId(R.id.main_toolbar_wordmark) }
+        withId(R.id.main_toolbar_wordmark)
+    }
         .name(withParent("Title"))
 
-val feedRecycler = KRecyclerView(
-    builder = {
-        withId(R.id.feed_view)
-    },
-    itemTypeBuilder = {
-        itemType(::SearchCardViewItem)
-        itemType(::CustomizeCardView)
-        itemType(::DayHeaderCardView)
-        itemType(::TopReadCardView)
-        itemType(::InTheNews)
-        itemType(::FeaturedArticleItem)
-    }
-).name(withParent("List of blocks"))
-
-fun topReadItem(index: Int, function: TopReadCardItem.() -> Unit) {
-    feedRecycler.invokeAtIndex(index, function)
-}
-
-fun topReadItem(): TopReadCardItem {
-    return feedRecycler.childWith<TopReadCardItem> {
-        withDescendant {
-            withText("Top read")
+    val feedRecycler = KRecyclerView(
+        builder = {
+            withId(R.id.feed_view)
+        },
+        itemTypeBuilder = {
+            itemType(::SearchCardViewItem)
+            itemType(::CustomizeCardView)
+            itemType(::DayHeaderCardView)
+            itemType(::TopReadCardView)
+            itemType(::InTheNews)
+            itemType(::FeaturedArticleItem)
         }
-    }.name(feedRecycler.getName().withParent("Top read"))
-}
+    ).name(withParent("List of blocks"))
 
+    fun topReadItem(index: Int, function: TopReadCardItem.() -> Unit) {
+        feedRecycler.invokeAtIndex(index, function)
+    }
+
+    fun topReadItem(): TopReadCardItem {
+        return feedRecycler.childWith<TopReadCardItem> {
+            withDescendant {
+                withText("Top read")
+            }
+        }.name(feedRecycler.getName().withParent("Top read"))
+    }
+
+    fun topReadItemByIndex(targetIndex: Int, function: TopReadCardItem.() -> Unit) {
+        feedRecycler.invokeById(
+            targetIndex = targetIndex,
+            targetID = R.id.view_announcement_text,
+            blockName = "Announcement Card",
+            limiter = (4 * targetIndex).coerceAtLeast(5),
+            function = function
+        )
+    }
 
 
 }

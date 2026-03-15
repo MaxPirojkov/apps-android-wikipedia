@@ -23,7 +23,7 @@ class Steps(val testContext: TestContext<*>) {
     }
 
     fun click(item: BaseActions) {
-        execute("Click on view ${item.getName()}") {
+        testContext.step("Click on view ${item.getName()}") {
             item.click()
         }
     }
