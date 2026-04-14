@@ -10,7 +10,7 @@ import org.wikipedia.R
 
 class TopReadCardItem(matcher: Matcher<View>) : KRecyclerItem<TopReadCardItem>(matcher) {
     val numberOfCard = KTextView(matcher) {
-        withId(R.id.numberView)
+        withId(R.id.baseNumberView)
     }
 
     val itemTitle = KTextView(matcher) {

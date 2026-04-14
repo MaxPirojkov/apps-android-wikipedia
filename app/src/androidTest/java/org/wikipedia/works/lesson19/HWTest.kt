@@ -9,8 +9,6 @@ import org.wikipedia.works.lesson07.OnboardingScreen
 import org.wikipedia.works.lesson07.homework.ExploreScreen
 import org.wikipedia.works.lesson07.homework.FeaturedArticleItem
 import org.wikipedia.works.lesson07.homework.NoInternetUiScreen
-import java.lang.Thread.sleep
-import org.wikipedia.works.lesson19.Steps
 
 
 class HWTest : TestCase() {

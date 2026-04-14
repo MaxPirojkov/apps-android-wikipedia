@@ -48,6 +48,14 @@ object ExploreScreenNew : NamedKScreen<ExploreScreenNew>() {
         }.name(feedRecycler.getName().withParent("Top read"))
     }
 
+    fun featuredArticleItem(): FeaturedArticleItem {
+        return feedRecycler.childWith<FeaturedArticleItem> {
+            withDescendant {
+                withText("Featured article")
+            }
+        }.name(feedRecycler.getName().withParent("Featured article"))
+    }
+
     fun topReadItemByIndex(targetIndex: Int, function: TopReadCardItem.() -> Unit) {
         feedRecycler.invokeById(
             targetIndex = targetIndex,

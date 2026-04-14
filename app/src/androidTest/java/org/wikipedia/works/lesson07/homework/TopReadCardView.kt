@@ -1,8 +1,6 @@
 package org.wikipedia.works.lesson07.homework
 
 import android.view.View
-import androidx.compose.ui.text.Paragraph
-import io.github.kakaocup.kakao.common.views.KView
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView

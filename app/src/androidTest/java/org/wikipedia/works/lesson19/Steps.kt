@@ -11,6 +11,8 @@ import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.wikipedia.works.lesson20.getName
+import org.wikipedia.works.lesson24.KWebViewBaseElement
+import org.wikipedia.works.lesson24.KWebViewElement
 
 class Steps(val testContext: TestContext<*>) {
 
@@ -115,6 +117,12 @@ class Steps(val testContext: TestContext<*>) {
     fun isNotChecked(item: CheckableAssertions, name: String) {
         execute("Not checked view $name") {
             item.isChecked()
+        }
+    }
+
+    fun scroll(item: KWebViewElement) {
+        execute("Scroll '${item.getName()}'") {
+            item.executeAction { scroll() }
         }
     }
 

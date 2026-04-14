@@ -9,6 +9,8 @@ import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.works.lesson20.name
+import org.wikipedia.works.lesson20.withParent
 
 
 class FeaturedArticleItem(matcher: Matcher<View>) : KRecyclerItem<FeaturedArticleItem>(matcher) {
@@ -17,8 +19,10 @@ class FeaturedArticleItem(matcher: Matcher<View>) : KRecyclerItem<FeaturedArticl
         withId(R.id.view_card_header_title)
     }
 
-    val articleImage: KButton = KButton {
-        withId(R.id.articleImage)
+    val articleImage by lazy {
+        KImageView(matcher) {
+            withId(R.id.articleImage)
+        }.name(withParent("Image article"))
     }
 
     val articleTitle = KTextView {

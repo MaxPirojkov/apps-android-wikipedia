@@ -17,7 +17,7 @@ open class HasAnyDrawableAssertion : ViewAssertion {
         if (view is ImageView) {
             Assert.assertTrue("Must have drawable", view.drawable != null)
         } else {
-            noViewFoundException ?: AssertionError("View is not ImageView")
+           throw noViewFoundException ?: AssertionError("View is not ImageView")
         }
     }
 }
