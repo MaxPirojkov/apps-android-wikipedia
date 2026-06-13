@@ -11,6 +11,7 @@ import org.wikipedia.works.lesson13.PopupScreen
 import org.wikipedia.works.lesson20.ExploreScreenNew
 import org.wikipedia.works.lesson20.HW.namedSteps
 import org.wikipedia.works.lesson24.WebViewDSLScreen.refText
+import org.wikipedia.works.lesson26.CloseCustomizeYourToolbarScenario
 
 class WebViewDSLTest : TestCase() {
 
@@ -20,8 +21,10 @@ class WebViewDSLTest : TestCase() {
     @Test
     fun webViewTest() {
         run {
+            val checkYourToolbar = CloseCustomizeYourToolbarScenario(this)
             namedSteps {
                 click(OnboardingScreen.skipButton)
+                checkYourToolbar.init()
                 ExploreScreenNew.featuredArticleItem().perform {
                     click(articleImage)
                 }

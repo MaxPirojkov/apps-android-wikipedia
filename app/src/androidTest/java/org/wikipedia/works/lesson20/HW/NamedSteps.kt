@@ -1,10 +1,18 @@
 package org.wikipedia.works.lesson20.HW
 
+import androidx.test.espresso.Espresso
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
+import com.kaspersky.kaspresso.testcases.models.info.StepInfo
 import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
+import io.github.kakaocup.kakao.common.views.KView
 import org.wikipedia.works.lesson20.getName
 import org.wikipedia.works.lesson24.KWebViewBaseElement
+import org.wikipedia.works.lesson26.CloseCustomizeYourToolbarScenario
+import org.wikipedia.works.lesson26.CloseDialogScenario
+import org.wikipedia.works.lesson26.CloseSyncReadingList
+import org.wikipedia.works.lesson26.ListOfSmartScenario
+import org.wikipedia.works.lesson26.NavBarScreen
 
 class NamedSteps(val testContext: TestContext<*>) {
 
@@ -12,32 +20,51 @@ class NamedSteps(val testContext: TestContext<*>) {
         function()
     }
 
+    private val listOfSmartScenario = ListOfSmartScenario(
+        listOf(
+            CloseDialogScenario(testContext),
+            CloseSyncReadingList(testContext),
+            CloseCustomizeYourToolbarScenario(testContext),
+
+        )
+    )
+
+    private fun execute(textOfSteps: String, actions: (StepInfo) -> Unit) {
+        try {
+            testContext.step(textOfSteps, actions)
+        } catch (e: Throwable) {
+            if (listOfSmartScenario.execute()) {
+                testContext.step(textOfSteps, actions)
+            } else throw e
+        }
+    }
+
     fun click(item: BaseActions) {
-        testContext.step("click on ${item.getName()}") {
+        execute("click on ${item.getName()}") {
             item.click()
         }
     }
 
     fun isDisplayed(item: BaseAssertions) {
-        testContext.step("${(item as BaseActions).getName()} is displayed") {
+        execute("${(item as BaseActions).getName()} is displayed") {
             item.isDisplayed()
         }
     }
 
     fun scroll(item: BaseActions) {
-        testContext.step("scroll to ${item.getName()}") {
+        execute("scroll to ${item.getName()}") {
             item.scrollTo()
         }
     }
 
     fun sleep(millis: Long) {
-        testContext.step("Pause on $millis") {
+        execute("Pause on $millis") {
             Thread.sleep(millis)
         }
     }
 
     fun webScroll(item: KWebViewBaseElement<*>) {
-        testContext.step("Scroll to ${item.getName()}") {
+        execute("Scroll to ${item.getName()}") {
             item.executeAction {
                 scroll()
             }
@@ -45,7 +72,7 @@ class NamedSteps(val testContext: TestContext<*>) {
     }
 
     fun webClick(item: KWebViewBaseElement<*>) {
-        testContext.step("Click on ${item.getName()}") {
+        execute("Click on ${item.getName()}") {
             item.executeAction {
                 click()
             }
@@ -58,5 +85,12 @@ class NamedSteps(val testContext: TestContext<*>) {
                 hasText(text)
             }
         }
+    }
+
+    fun pressBack() {
+        execute("Press back") {
+            Espresso.pressBack()
+        }
+        isDisplayed(NavBarScreen.savedButton)
     }
 }

@@ -1,6 +1,5 @@
 package org.wikipedia.works.lesson20
 
-import androidx.room.Index
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 

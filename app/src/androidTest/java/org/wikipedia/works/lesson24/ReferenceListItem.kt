@@ -13,5 +13,6 @@ class ReferenceListItem(kWebView: KWebView, xPath: String) :
 
     val content by lazy {
         child<KWebViewElement>(".//span[contains(@class,'mw-reference-text')]")
+            .name(withParent("Content of reference"))
     }
 }

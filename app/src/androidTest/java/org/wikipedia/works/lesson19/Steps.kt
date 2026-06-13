@@ -13,11 +13,24 @@ import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.wikipedia.works.lesson20.getName
 import org.wikipedia.works.lesson24.KWebViewBaseElement
 import org.wikipedia.works.lesson24.KWebViewElement
+import org.wikipedia.works.lesson26.CloseCustomizeYourToolbarScenario
+import org.wikipedia.works.lesson26.ListOfSmartScenario
 
 class Steps(val testContext: TestContext<*>) {
+    private val listOfSmartScenario = ListOfSmartScenario(
+        listOf(
+            CloseCustomizeYourToolbarScenario(testContext),
+        )
+    )
 
     private fun execute(textOfSteps: String, actions: (StepInfo) -> Unit) {
-        testContext.step(textOfSteps, actions)
+        try {
+            testContext.step(textOfSteps, actions)
+        } catch (e: Throwable) {
+            if (listOfSmartScenario.execute()) {
+                testContext.step(textOfSteps, actions)
+            } else throw e
+        }
     }
 
     operator fun invoke(function: Steps.() -> Unit) {

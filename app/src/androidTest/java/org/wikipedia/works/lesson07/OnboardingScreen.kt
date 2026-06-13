@@ -1,7 +1,6 @@
 package org.wikipedia.works.lesson07
 
 import android.view.View
-import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.pager2.KViewPager2
 import io.github.kakaocup.kakao.pager2.KViewPagerItem
