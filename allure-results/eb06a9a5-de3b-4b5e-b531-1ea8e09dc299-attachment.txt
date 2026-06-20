@@ -1,0 +1,38 @@
+--------- beginning of main
+06-20 12:48:10.922 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:10.923 16288 16376 I KASPRESSO: Logcat buffer may be dumped from 06-20 12:48:10.922
+06-20 12:48:10.982 16288 16376 I KASPRESSO: Starting video recording: Video_SampleTest.mp4
+06-20 12:48:10.983 16288 16376 I KASPRESSO: Waiting for 3000 ms
+06-20 12:48:10.995 16288 16441 D KASPRESSO: Display resolution: 1440x2824; supported codec resolution: 2048x2048
+06-20 12:48:10.995 16288 16441 D KASPRESSO: Starting video recording with resolution 1440x2048
+06-20 12:48:13.984 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:13.984 16288 16376 I KASPRESSO: BEFORE TEST SECTION
+06-20 12:48:13.984 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:13.985 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:13.985 16288 16376 I KASPRESSO: TEST SECTION
+06-20 12:48:13.985 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:14.018 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:14.018 16288 16376 I KASPRESSO: TEST STEP: "1. click on Onboarding screen : skip Button" in SampleTest
+06-20 12:48:14.037 16288 16288 I KASPRESSO: single click on MaterialButton(id=fragment_onboarding_skip_button;text=Skip;)
+06-20 12:48:14.492 16288 16376 I KASPRESSO: TEST STEP: "1. click on Onboarding screen : skip Button" in SampleTest SUCCEED. It took 0 minutes, 0 seconds and 474 millis. 
+06-20 12:48:14.492 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:14.585 16288 16376 I KASPRESSO: Screenshot saved to /data/user/0/org.wikipedia.alpha/files/screenshots/org.wikipedia.works.lesson28.SampleTest/testIdFirst/SampleTest_step_1.png
+06-20 12:48:14.585 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:14.585 16288 16376 I KASPRESSO: TEST STEP: "2. Navigation Bar : Button 'Saved' is displayed" in SampleTest
+06-20 12:48:14.589 16288 16288 I KASPRESSO: Check (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle) on BottomNavigationItemView(id=nav_tab_reading_lists;desc=Saved;)
+06-20 12:48:14.589 16288 16376 I KASPRESSO: TEST STEP: "2. Navigation Bar : Button 'Saved' is displayed" in SampleTest SUCCEED. It took 0 minutes, 0 seconds and 4 millis. 
+06-20 12:48:14.589 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:14.675 16288 16376 I KASPRESSO: Screenshot saved to /data/user/0/org.wikipedia.alpha/files/screenshots/org.wikipedia.works.lesson28.SampleTest/testIdFirst/SampleTest_step_2.png
+06-20 12:48:14.675 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:14.675 16288 16376 I KASPRESSO: TEST STEP: "3. click on Navigation Bar : Button 'Saved'" in SampleTest
+06-20 12:48:14.677 16288 16288 I KASPRESSO: single click on BottomNavigationItemView(id=nav_tab_reading_lists;desc=Saved;)
+06-20 12:48:15.058 16288 16376 I KASPRESSO: TEST STEP: "3. click on Navigation Bar : Button 'Saved'" in SampleTest SUCCEED. It took 0 minutes, 0 seconds and 383 millis. 
+06-20 12:48:15.058 16288 16376 I KASPRESSO: ___________________________________________________________________________
+06-20 12:48:15.153 16288 16376 I KASPRESSO: Screenshot saved to /data/user/0/org.wikipedia.alpha/files/screenshots/org.wikipedia.works.lesson28.SampleTest/testIdFirst/SampleTest_step_3.png
+06-20 12:48:15.153 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:15.153 16288 16376 I KASPRESSO: AFTER TEST SECTION
+06-20 12:48:15.153 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:15.153 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:15.153 16288 16376 I KASPRESSO: TEST PASSED
+06-20 12:48:15.153 16288 16376 I KASPRESSO: ---------------------------------------------------------------------------
+06-20 12:48:15.154 16288 16376 I KASPRESSO: Dump logcat buffer to /data/user/0/org.wikipedia.alpha/files/logcat/org.wikipedia.works.lesson28.SampleTest/testIdFirst/TestLogcat.txt: logcat -b default -d -t "06-20 12:48:10.922" -s "KASPRESSO","KASPRESSO_TEST"

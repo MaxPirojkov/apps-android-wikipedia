@@ -1,0 +1,123 @@
+{
+    "name": "testIdFirst",
+    "start": 1781948885479,
+    "stop": 1781948897414,
+    "stage": "finished",
+    "description": null,
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "click on Onboarding screen : skip Button",
+            "start": 1781948894018,
+            "stop": 1781948894585,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [],
+            "attachments": [
+                {
+                    "source": "0abf34df-eff5-4a3a-a81a-fc52f3cd1f54-attachment.png",
+                    "name": "SampleTest_step_1.png",
+                    "type": "image/png"
+                }
+            ],
+            "parameters": []
+        },
+        {
+            "name": "Navigation Bar : Button 'Saved' is displayed",
+            "start": 1781948894585,
+            "stop": 1781948894675,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [],
+            "attachments": [
+                {
+                    "source": "6ade20b6-5722-47fd-a474-a586e343982b-attachment.png",
+                    "name": "SampleTest_step_2.png",
+                    "type": "image/png"
+                }
+            ],
+            "parameters": []
+        },
+        {
+            "name": "click on Navigation Bar : Button 'Saved'",
+            "start": 1781948894675,
+            "stop": 1781948895153,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [],
+            "attachments": [
+                {
+                    "source": "94cce011-2a6b-4f7d-bf50-44a37babb3ac-attachment.png",
+                    "name": "SampleTest_step_3.png",
+                    "type": "image/png"
+                }
+            ],
+            "parameters": []
+        }
+    ],
+    "attachments": [
+        {
+            "source": "eb06a9a5-de3b-4b5e-b531-1ea8e09dc299-attachment.txt",
+            "name": "TestLogcat.txt",
+            "type": "text/plain"
+        },
+        {
+            "source": "167a2dab-12de-471a-b8c1-d241d269e304-attachment.mp4",
+            "name": "Video_SampleTest.mp4",
+            "type": "video/mp4"
+        }
+    ],
+    "parameters": [],
+    "uuid": "d4814344-3d93-4617-8478-15144d91da49",
+    "historyId": "f94c16c3fc30c512e8922695c7593a66",
+    "fullName": "org.wikipedia.works.lesson28.SampleTest.testIdFirst",
+    "labels": [
+        {
+            "name": "package",
+            "value": "org.wikipedia.works.lesson28"
+        },
+        {
+            "name": "testClass",
+            "value": "org.wikipedia.works.lesson28.SampleTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "testIdFirst"
+        },
+        {
+            "name": "suite",
+            "value": "org.wikipedia.works.lesson28.SampleTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: com.kaspersky.kaspresso.runner.KaspressoRunner(89)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "AS_ID",
+            "value": "1"
+        }
+    ]
+}

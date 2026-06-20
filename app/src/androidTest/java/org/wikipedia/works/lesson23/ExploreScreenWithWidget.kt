@@ -1,7 +1,6 @@
 package org.wikipedia.works.lesson23
 
 
-import androidx.compose.ui.test.hasAnyDescendant
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
 import androidx.test.espresso.matcher.ViewMatchers.withId

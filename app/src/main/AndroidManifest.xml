@@ -34,7 +34,7 @@
 
     <!-- For being able to post notifications -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--
     List of hardware features that are implicitly used, but not required. These need to be
     declared as optional, so that the app can be installed on devices that don't have them.
