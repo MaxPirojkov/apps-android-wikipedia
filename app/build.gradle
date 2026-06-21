@@ -97,6 +97,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles 'test-proguard-rules.pro'
+            final Properties HW_PROPS = loadPropertiesFromRoot('local.properties')
+            buildConfigField "String", "HOMW_WORK_DESCRIPTION", "\"Hi ${HW_PROPS["HomeWorkExample"]}\""
+            final Properties CREDENTIALS_PROPS = loadPropertiesFromRoot('credentials')
+            for(Map.Entry<String, String> entry: CREDENTIALS_PROPS.entrySet()) {
+                buildConfigField "String", entry.key, "\"${entry.value}\""
+            }
         }
         release {
             minifyEnabled true
@@ -306,4 +312,8 @@ private static Properties loadProperties(File file) {
         System.err.println "\"${file}\" not found"
     }
     return props
+}
+
+private Properties loadPropertiesFromRoot(String name) {
+    return loadProperties(project.rootProject.file(name))
 }

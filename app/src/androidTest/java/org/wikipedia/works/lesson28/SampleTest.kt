@@ -7,11 +7,14 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import io.qameta.allure.kotlin.AllureId
 import org.junit.Rule
 import org.junit.Test
+import org.wikipedia.BuildConfig
 import org.wikipedia.main.MainActivity
 import org.wikipedia.works.lesson07.OnboardingScreen
 import org.wikipedia.works.lesson20.HW.namedSteps
 import org.wikipedia.works.lesson26.NavBarScreen
 import org.wikipedia.works.lesson27.SuccessFinaleScreenShotTestInterceptor
+import org.wikipedia.works.lesson29.Credentials
+import org.wikipedia.works.lesson29.Users
 
 class SampleTest : TestCase(
     kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport().apply {
@@ -30,6 +33,7 @@ class SampleTest : TestCase(
     @Test
     @AllureId("1")
     fun testIdFirst() {
+        val password = Credentials.getPassword(Users.alphaLogin)
         run {
             namedSteps {
                 click(OnboardingScreen.skipButton)

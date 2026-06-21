@@ -1,5 +1,6 @@
 package org.wikipedia.works.lesson26
 
+import io.github.kakaocup.kakao.common.views.KView
 import io.github.kakaocup.kakao.text.KButton
 import org.wikipedia.R
 import org.wikipedia.works.lesson20.NamedKScreen
@@ -23,4 +24,16 @@ object NavBarScreen : NamedKScreen<NavBarScreen>() {
             withId(R.id.main_nav_tab_layout)
         }
     }.name(withParent("Button 'Explore'"))
+
+    val moreButton = KButton {
+        withContentDescription("More")
+        isDescendantOfA {
+            withId(R.id.main_nav_tab_layout)
+        }
+    }.name(withParent("Button 'More'"))
+
+    val loginMenu = KView{
+        withId(R.id.main_drawer_account_container)
+    }.name(withParent("Menu Log in / join Wikipedia"))
+
 }

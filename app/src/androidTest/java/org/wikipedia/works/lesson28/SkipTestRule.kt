@@ -13,16 +13,12 @@ class SkipTestRule() : TestRule {
         return object : Statement() {
             override fun evaluate() {
                 val descr = description?.getAnnotation(Deprecated::class.java)?.message
-                try {
-                    if (descr != null) {
-                        throw AssumptionViolatedException("Test deprecated $descr")
-                    } else {
-                        base?.evaluate()
-                    }
-                } catch (e: AssumptionViolatedException) {
-                    throw e
-                } finally {
+                if (descr != null) {
+                    throw AssumptionViolatedException("Test deprecated $descr")
+                } else {
+                    base?.evaluate()
                 }
+
             }
         }
     }

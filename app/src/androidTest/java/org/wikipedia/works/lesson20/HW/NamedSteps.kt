@@ -1,6 +1,8 @@
 package org.wikipedia.works.lesson20.HW
 
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.action.ViewActions
+import com.kaspersky.components.kautomator.system.UiSystem.view
 import com.kaspersky.kaspresso.testcases.core.testcontext.TestContext
 import com.kaspersky.kaspresso.testcases.models.info.StepInfo
 import io.github.kakaocup.kakao.common.actions.BaseActions
@@ -13,6 +15,10 @@ import org.wikipedia.works.lesson26.CloseDialogScenario
 import org.wikipedia.works.lesson26.CloseSyncReadingList
 import org.wikipedia.works.lesson26.ListOfSmartScenario
 import org.wikipedia.works.lesson26.NavBarScreen
+import org.wikipedia.works.lesson29.CreateAccountScreen
+import org.wikipedia.works.lesson29.Credentials
+import org.wikipedia.works.lesson29.LoginScreen
+
 
 class NamedSteps(val testContext: TestContext<*>) {
 
@@ -93,4 +99,26 @@ class NamedSteps(val testContext: TestContext<*>) {
         }
         isDisplayed(NavBarScreen.savedButton)
     }
+
+    fun authorize(userName: String) {
+        execute("Authorization by $userName") {
+            NavBarScreen {
+                click(moreButton)
+                click(loginMenu)
+            }
+            click(CreateAccountScreen.loginButton)
+            LoginScreen {
+                userNameInput.typeText(userName)
+                passwordInput.typeText(
+                    Credentials.getPassword(
+                        userName
+                            ?: throw IllegalArgumentException("Password for $userName don't find ")
+                    )
+                )
+            }
+            click(LoginScreen.loginButton)
+        }
+    }
+
+
 }
